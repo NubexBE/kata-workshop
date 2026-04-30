@@ -1,0 +1,31 @@
+services:
+
+  # Interactive shell — drop into any kata directory
+  kata:
+    build: .
+    volumes:
+      - .:/kata
+    working_dir: /kata
+    stdin_open: true
+    tty: true
+    command: bash
+
+  # Composer — run from a kata subdirectory, e.g.:
+  #   docker compose run --rm composer install
+  #   (set KATA_DIR or cd to the right folder first)
+  composer:
+    build: .
+    volumes:
+      - .:/kata
+    working_dir: /kata/${KATA_DIR:-.}
+    entrypoint: composer
+
+  # Run PHPUnit for a specific kata, e.g.:
+  #   KATA_DIR=GildedRose docker compose run --rm phpunit
+  phpunit:
+    build: .
+    volumes:
+      - .:/kata
+    working_dir: /kata/${KATA_DIR:-.}
+    entrypoint: ./vendor/bin/phpunit
+    command: ["--colors=always"]
