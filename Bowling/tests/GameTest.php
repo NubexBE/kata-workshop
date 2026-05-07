@@ -9,10 +9,26 @@ use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
 {
-    public function testRoll(): void
+	public function testFrames(): void
 	{
 		$game = new Game();
-		$game->roll(1);
-		$this->assertEquals();
+		$frame = $game->totalFrames;
+		$this->assertEquals(10, $frame);
 	}
+
+	public function testPins(): void
+	{
+		$game = new Game();
+		$pins = $game->totalPins;
+		$this->assertEquals(10, $pins);
+	}
+	public function testRemainingRolls(): void
+	{
+		$game = new Game();
+		$rolls = $game->remainingRolls;
+		$this->assertEquals(2, $rolls);
+	}
+
+
+
 }
