@@ -1,47 +1,47 @@
 Bowling scores Kata - PHP Version
 =================================
 
-Ceci est une version adaptée du kata. [Voir la version originale](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata) où vous pourrez également trouver une résolution en TDD sous formes de slides.
+This is an adapted version of the kata. [See the original version](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata), where you can also find a TDD solution in slide form.
 
-Règles du bowling
+Bowling rules
+-------------
+
+- A game consists of 10 frames
+- In each frame, 10 pins are set up and the player has up to two rolls to knock down as many as possible
+- A frame’s score is the number of pins knocked down, with bonuses for strikes and spares
+- A spare is knocking down all the pins in two rolls of a frame. The associated bonus is the number of pins knocked down on the next roll
+- A strike is knocking down all (10) pins on the first roll of a frame. This ends the frame, and the associated bonus is the number of pins knocked down on the next two rolls
+- On the last frame, if the player scores a spare or a strike, they may keep rolling to earn their bonuses. However, the player may not roll more than three times in that frame
+
+Note: The highest possible score is 300 points
+
+Kata instructions
 -----------------
 
-- une partie se compose de 10 frames
-- à chaque frame, 10 quilles sont installées et le joueur a jusqu'à deux lancés pour en faire tomber le maximum
-- le score d'une frame est le nombre de quilles tombées, avec un bonus pour les strikes et les spares
-- un spare consiste à faire tomber toutes les quilles après les deux lancés d'une frame. Le bonus associé est le nombre de quilles tombées lors du prochain lancé
-- un strike consiste à faire tomber toutes (10) les quilles dès le premier lancé d'une frame. Ceci met fin à la frame et le bonus associé est le nombre de quilles tombées lors des 2 prochains lancés
-- à la dernière frame, en cas de spare ou de strike, le joueur peut continuer à faire des lancés pour obtenir ses bonus. Cependant, le joueur ne peut pas faire plus de 3 lancés lors de cette frame
+Write the code needed to compute the score of a game, following the 3 rules of TDD:
 
-NB : Le score le plus haut possible est 300 points
-
-Instructions du kata
---------------------
-
-Ecrivez le code nécessaire au calcul du score d'une partie. En respectant les 3 règles du TDD :
-
-1. Ne pas écrire du code de production à moins qu'il ne permette de faire passer un test qui échoue
-2. Ne pas écrire plus de code de test si un test échoue, une erreur de compilation compte comme un échec
-3. Vous ne devez pas écrire plus de code de production que ce qui est nécessaire à faire passer le test qui échoue
+1. Do not write production code unless it makes a failing test pass
+2. Do not write more of a test if a test fails; a compilation error counts as a failure
+3. You must not write more production code than is necessary to make the failing test pass
 
 Structure
----------
+-----------
 
 - `src`
-  - `GameInterface.php` - cette interface **ne** doit **pas** être modifiée
-  - `Game.php` - classe à créer, qui doit implémenter l'interface GameInterface
+  - `GameInterface.php` - this interface must **not** be modified
+  - `Game.php` - class to create; it must implement `GameInterface`
 - `tests`
-  - `GameTest.php` - classe de test à compléter
+  - `GameTest.php` - test class to complete
 
 Installation
 ------------
 
-Prérequis
+Prerequisites
 
 - PHP 7.4+
 - [Composer](https://getcomposer.org)
 
-Installation
+Setup
 
 ```bash
 git clone git@github.com:blanc-frederic/kata.git
@@ -52,16 +52,16 @@ composer install
 Tests
 -----
 
-Lancer les tests
+Run the tests
 
 ```bash
 composer test
 ```
 
-Pour lancer les tests avec génération du code-coverage :
+To run the tests with code coverage:
 
 ```bash
 composer test-coverage
 ```
 
-Le rapport sera généré dans `/build/coverage`, vous pouvez le visualiser en ouvrant `index.html` dans un navigateur.
+The report will be generated in `/build/coverage`; open `index.html` in a browser to view it.
