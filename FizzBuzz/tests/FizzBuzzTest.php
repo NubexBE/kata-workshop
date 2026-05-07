@@ -20,7 +20,6 @@ class FizzBuzzTest extends TestCase
 
     public function testSample(): void
     {
-        $this->markTestSkipped();
         $fizzBuzz = new FizzBuzz();
 
         $result = implode(', ', $fizzBuzz->range(1, 15));
