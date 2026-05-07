@@ -9,7 +9,11 @@ class FizzBuzz
     /** @return string[] */
     public function range(int $start, int $end): array
     {
-		return $numbers = range($start, $end);
+        $result = [];
+            for($i=$start; $i<=$end; $i++) {
+                $result = $this->translate($i);
+            }
+            return $result;
     }
 
 	public function translate(int $number): string{
