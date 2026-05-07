@@ -2,7 +2,8 @@
 
 namespace Bowling;
 
-class Game{
+class Game {
+    const int totalFrames = 10;
 
 	public function roll(int $pins): void
 	{

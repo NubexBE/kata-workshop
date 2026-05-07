@@ -15,4 +15,9 @@ class GameTest extends TestCase
 		$game->roll(1);
 		$this->assertEquals();
 	}
+    public function testFrames(): void
+    {
+        $game = new Game();
+
+    }
 }
