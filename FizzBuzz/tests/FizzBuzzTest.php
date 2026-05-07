@@ -31,8 +31,8 @@ class FizzBuzzTest extends TestCase
 	public function testRange()
 	{
 		$fizzBuzz = new FizzBuzz();
-		$result = $fizzBuzz->range(1,3);
-		$expected = [1,2,3];
+		$result = $fizzBuzz->range(1, 3);
+		$expected = ['1','2', 'fizz'];
 		$this->assertSame($expected, $result);
 	}
 
