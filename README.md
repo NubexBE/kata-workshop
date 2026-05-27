@@ -6,6 +6,7 @@ Code katas
 - [Bowling scores kata](Bowling/). Algorithm, Test Driven Development
 - [Racing car kata](RacingCar/). Adding tests to existing code
 - [FizzBuzz kata](FizzBuzz/). Problem solving, Beginner
+- [Conway's Game of Life kata](GameOfLife/). Test Driven Development, Algorithm
 
 Other kata repositories
 -----------------------

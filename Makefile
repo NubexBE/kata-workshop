@@ -6,7 +6,8 @@
         tripbook-install     tripbook-test \
         bowling-install      bowling-test \
         racingcar-install    racingcar-test \
-        fizzbuzz-install     fizzbuzz-test
+        fizzbuzz-install     fizzbuzz-test \
+        gameoflife-install   gameoflife-test
 
 help:
 	@echo ""
@@ -29,6 +30,9 @@ help:
 	@echo ""
 	@echo "  make fizzbuzz-install     Install dependencies for FizzBuzz"
 	@echo "  make fizzbuzz-test        Run FizzBuzz tests"
+	@echo ""
+	@echo "  make gameoflife-install   Install dependencies for GameOfLife"
+	@echo "  make gameoflife-test      Run GameOfLife tests"
 	@echo ""
 
 build:
@@ -71,3 +75,10 @@ fizzbuzz-install:
 
 fizzbuzz-test:
 	KATA_DIR=FizzBuzz docker compose run --rm phpunit
+
+# ─── GameOfLife ───────────────────────────────
+gameoflife-install:
+	KATA_DIR=GameOfLife docker compose run --rm composer install
+
+gameoflife-test:
+	KATA_DIR=GameOfLife docker compose run --rm phpunit
